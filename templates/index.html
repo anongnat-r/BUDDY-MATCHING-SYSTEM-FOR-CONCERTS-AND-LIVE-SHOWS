@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    BUDDY MATCHING SYSTEM FOR CONCERTS AND LIVE SHOWS
+  </title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css"></script>
+  <script defer="" src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="./css/helpers.css">
+  <link rel="stylesheet" href="./css/style.css"> -->
+  <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/helpers.css') }}">
+  <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/style.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/index.css') }}">
+  <script src="{{ url_for('static', filename = 'js/login.js') }}"></script>
+  
+</head>
+
+<body>
+  <section class="hero is-fullheight ">
+  <div class="text center"style="margin-top:200px;">
+    <h1>WELCOME</h1>
+  </div>
+  <div class="center is-overlay"style="">
+    <div id="firebaseui-auth-container"></div>
+  </div>
+  </section>
+</body>
+</html>

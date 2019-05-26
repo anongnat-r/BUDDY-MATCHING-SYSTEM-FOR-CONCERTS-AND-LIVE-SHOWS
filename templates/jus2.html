@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jus 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/helpers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="../css/debug.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/jus2.css') }}">
+    <script src="{{ url_for('static', filename = 'js/jus2.js') }}"></script>
+
+</head>
+
+<body>
+
+    <div class="hero-head text" style="height:60px;">
+    <nav class="navbar " role="navigation" aria-label="main navigation" style="background-color: #343633;">
+      <div class="navbar-brand level-left">
+        <a class="navbar-item" href="{{ url_for('signin') }}"style="color:white;">
+          <!-- <img src="./images/logo.png" width="80px;" height="80px;"> -->
+          HOME
+        </a>
+      </div>
+      <div id="navbarBasicExample level-left" class="navbar-menu">
+        <div class="navbar-start">
+
+          
+        </div>
+      </div>
+      
+      <div class="level-right " style="margin-right: 20px;">
+        <div class=""style="">
+          <figure class="image is-48x48"style="margin-right: 5px;">
+            <img id ="user_img"class="is-rounded"src="" ></div>
+          </figure>
+          <h4 size="5" id="user_name"style="margin-right:15px;color:white;"></h4>
+          <a class="button  is-danger "id="signOut" href="{{ url_for('signout') }}" style="background-color:transparent;">SIGN OUT</a>
+          <!-- <button class="text" id="signOut" onclick="location.href = './index.html'"; >Sign Out</button> -->
+      </div>
+    </nav>
+  </div>
+    <div class="hero-body  ">
+        <div class="center text">
+            <h1 size=5 >Jus2 [focus] Premiere Showcase Tour In Bangkok</h1>
+        </div>
+        <div class="center" style="margin-top:20px;">
+            <img src="{{ url_for('static', filename = 'images/2.jpg') }}" alt="">
+        </div>
+        <div class="center h4" style="margin-top:20px;">
+            <h4>รอบการแสดง 26 เม.ย. 2562 - 28 เม.ย. 2562</h4>
+        </div>
+        <div class="columns text" style="margin-top:30px;">
+            <div class="column">
+                
+            </div>
+            <div class="column center">
+                <img src="{{ url_for('static', filename = 'images/rank.png') }}" alt="" style="width:60px;height: 60px;">
+            </div>
+            <div class="column text">
+                
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+            <div class="column">
+
+            </div>
+            <div class="column center">
+                <img src="{{ url_for('static', filename = 'images/winner.png') }}" alt="" style="width:40px;height: 40px;">
+            </div>
+            <div class="column text " >
+                <img   src="{{user_rank[0][1]}}" style="float:left;border-radius: 50%;margin-right:20px;">
+                <a  href="https://twitter.com/{{user_rank[0][0]}}">
+                    <h2  style="color:black;">{{user_rank[0][0]}}</h2>
+                </a>
+            </div>
+            
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+            <div class="column">
+
+            </div>
+            <div class="column center">
+                <img src="{{ url_for('static', filename = 'images/2nd.png') }}" alt="" style="width:40px;height:40px;">
+            </div>
+            <div class="column text ">
+                <img  src="{{user_rank[1][1]}}" style="float:left;border-radius: 50%;margin-right:20px;">
+                <a  href="https://twitter.com/{{user_rank[1][0]}}">
+                    <h2 style="color:black;">{{user_rank[1][0]}}</h2>
+                </a>
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+            <div class="column">
+
+            </div>
+            <div class="column center">
+                <img src="{{ url_for('static', filename = 'images/3rd.png') }}" alt="" style="width:40px;height:40px;">
+            </div>
+            <div class="column text ">
+                <img   src="{{user_rank[2][1]}}" style="float:left;border-radius: 50%;margin-right:20px;">
+                <a  href="https://twitter.com/{{user_rank[2][0]}}">
+                    <h2 style="color:black;">{{user_rank[2][0]}}</h2>
+                </a>
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+            <div class="column">
+
+            </div>
+            <div class="column center">
+                <img src="{{ url_for('static', filename = 'images/4th.png') }}" alt="" style="width:40px;height:40px;">
+            </div>
+            <div class="column text ">
+                <img src="{{user_rank[3][1]}}" style="float:left;border-radius: 50%;margin-right:20px;">
+                <a  href="https://twitter.com/{{user_rank[3][0]}}">
+                    <h2  style="color:black;">{{user_rank[3][0]}}</h2>
+                </a>
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+            <div class="column">
+
+            </div>
+            <div class="column center">
+                <img src="{{ url_for('static', filename = 'images/5.png') }}" alt="" style="width:40px;height:40px;">
+            </div>
+            <div class="column text ">
+                <img   src="{{user_rank[4][1]}}" style="float:left;border-radius: 50%;margin-right:20px;">
+                <a href="https://twitter.com/{{user_rank[4][0]}}">
+                    <h2 style="color:black;">{{user_rank[4][0]}}</h2>
+                </a>
+            </div>
+            <div class="column"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+body,html {
+    height: 100%;
+    background-color: #DEC1FF;
+}
+
+.bg {
+    /* The image used */
+    /* background-image: url(""); */
+    
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+
+    background-size: cover;
+}
+
+.text {
+    font-family: 'Poiret One', cursive;
+}
+
+.h4 {
+    font-family: 'Athiti', sans-serif;
+}
+
+.center,
+.center-column,
+.top,
+.right,
+.bottom,
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-column {
+    flex-direction: column;
+}
+
+.top {
+    align-items: flex-start;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.bottom {
+    align-items: flex-end;
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.single-spaced,
+.single-spaced * {
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+    .desktop {
+        display: none;
+    }
+}
